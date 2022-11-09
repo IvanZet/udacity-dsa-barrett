@@ -50,4 +50,21 @@ public class LinkedList {
         System.out.println("Length: " + length);
     }
 
+    public void makeEmpty() {
+        head = null;
+        tail = null;
+        length = 0;
+    }
+
+    public void append (int value) {
+        Node newNode = new Node(value);
+        if (head == null) {
+            head = newNode;
+        } else {
+            tail.next = newNode;
+        }
+        tail = newNode;
+        length++;
+    }
+
 }
