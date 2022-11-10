@@ -8,50 +8,59 @@ public class Main {
     public static void main(String[] args) {
 
         LinkedList myLinkedList = new LinkedList(1);
+        myLinkedList.append(2);
         myLinkedList.append(3);
+        myLinkedList.append(4);
+        myLinkedList.append(5);
 
-        System.out.println("LL before insert():");
+        System.out.println("LL before remove():");
         myLinkedList.printList();
 
-        myLinkedList.insert(1, 2);
-
-        System.out.println("\nLL after insert(2) in middle:");
+        System.out.println("\nRemoved node:");
+        System.out.println(myLinkedList.remove(2).value);
+        System.out.println("LL after remove() in middle:");
         myLinkedList.printList();
 
-        myLinkedList.insert(0, 0);
-
-        System.out.println("\nLL after insert(0) at beginning:");
+        System.out.println("\nRemoved node:");
+        System.out.println(myLinkedList.remove(0).value);
+        System.out.println("LL after remove() of first node:");
         myLinkedList.printList();
 
-        myLinkedList.insert(4, 4);
-
-        System.out.println("\nLL after insert(4) at end:");
+        System.out.println("\nRemoved node:");
+        System.out.println(myLinkedList.remove(2).value);
+        System.out.println("LL after remove() of last node:");
         myLinkedList.printList();
 
 
         /*
             EXPECTED OUTPUT:
             ----------------
-            LL before insert():
-            1
-            3
-
-            LL after insert(2) in middle:
+            LL before remove():
             1
             2
             3
+            4
+            5
 
-            LL after insert(0) at beginning:
-            0
+            Removed node:
+            3
+            LL after remove() in middle:
             1
             2
-            3
+            4
+            5
 
-            LL after insert(4) at end:
-            0
+            Removed node:
             1
+            LL after remove() of first node:
             2
-            3
+            4
+            5
+
+            Removed node:
+            5
+            LL after remove() of last node:
+            2
             4
 
         */
