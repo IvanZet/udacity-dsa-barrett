@@ -15,7 +15,7 @@ public class LinkedList {
         }
     }
 
-    public LinkedList (int value) {
+    public LinkedList(int value) {
         Node newNode = new Node(value);
         head = newNode;
         tail = newNode;
@@ -56,7 +56,7 @@ public class LinkedList {
         length = 0;
     }
 
-    public void append (int value) {
+    public void append(int value) {
         Node newNode = new Node(value);
         if (head == null) {
             head = newNode;
@@ -117,7 +117,7 @@ public class LinkedList {
         return temp;
     }
 
-    public boolean set (int index, int value) {
+    public boolean set(int index, int value) {
         Node temp = get(index);
         if (temp != null) {
             temp.value = value;
@@ -126,7 +126,7 @@ public class LinkedList {
         return false;
     }
 
-    public boolean insert (int index, int value) {
+    public boolean insert(int index, int value) {
         if (index < 0 || index > length) return false;
         if (index == 0) {
             prepend(value);
