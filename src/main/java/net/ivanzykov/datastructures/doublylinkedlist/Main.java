@@ -5,50 +5,59 @@ public class Main {
     public static void main(String[] args) {
 
         DoublyLinkedList myDLL = new DoublyLinkedList(1);
+        myDLL.append(2);
         myDLL.append(3);
+        myDLL.append(4);
+        myDLL.append(5);
 
-        System.out.println("DLL before insert():");
+        System.out.println("DLL before remove():");
         myDLL.printList();
 
-        myDLL.insert(1, 2);
-
-        System.out.println("\nDLL after insert(2) in middle:");
+        System.out.println("\nRemoved node:");
+        System.out.println(myDLL.remove(2).value);
+        System.out.println("DLL after remove() in middle:");
         myDLL.printList();
 
-        myDLL.insert(0, 0);
-
-        System.out.println("\nDLL after insert(0) at beginning:");
+        System.out.println("\nRemoved node:");
+        System.out.println(myDLL.remove(0).value);
+        System.out.println("DLL after remove() of first node:");
         myDLL.printList();
 
-        myDLL.insert(4, 4);
-
-        System.out.println("\nDLL after insert(4) at end:");
+        System.out.println("\nRemoved node:");
+        System.out.println(myDLL.remove(2).value);
+        System.out.println("DLL after remove() of last node:");
         myDLL.printList();
 
 
         /*
             EXPECTED OUTPUT:
             ----------------
-            DLL before insert():
-            1
-            3
-
-            DLL after insert(2) in middle:
+            DLL before remove():
             1
             2
             3
+            4
+            5
 
-            DLL after insert(0) at beginning:
-            0
+            Removed node:
+            3
+            DLL after remove() in middle:
             1
             2
-            3
+            4
+            5
 
-            DLL after insert(4) at end:
-            0
+            Removed node:
             1
+            DLL after remove() of first node:
             2
-            3
+            4
+            5
+
+            Removed node:
+            5
+            DLL after remove() of last node:
+            2
             4
 
         */
