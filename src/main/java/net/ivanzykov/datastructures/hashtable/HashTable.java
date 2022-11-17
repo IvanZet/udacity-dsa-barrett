@@ -1,5 +1,8 @@
 package net.ivanzykov.datastructures.hashtable;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class HashTable {
 
     // Size of a prime number makes better distribution of hash()
@@ -67,5 +70,17 @@ public class HashTable {
             temp = temp.next;
         }
         return 0;
+    }
+
+    public ArrayList keys() {
+        ArrayList<String> allKeys = new ArrayList<>();
+        for (int i = 0; i < dataMap.length; i++) {
+            Node temp = dataMap[i];
+            while (temp != null) {
+                allKeys.add(temp.key);
+                temp = temp.next;
+            }
+        }
+        return allKeys;
     }
 }
