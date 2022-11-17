@@ -2,6 +2,7 @@ package net.ivanzykov.datastructures.hashtable;
 
 public class HashTable {
 
+    // Size of a prime number makes better distribution of hash()
     private int size = 7;
     private Node[] dataMap;
 
@@ -34,8 +35,7 @@ public class HashTable {
         }
     }
 
-    // FIXME: change access to private. It is public now to test it
-    public int hash(String key) {
+    private int hash(String key) {
         int hash = 0;
         char[] keyChars = key.toCharArray();
         for (int i = 0; i < keyChars.length; i++) {
@@ -43,5 +43,19 @@ public class HashTable {
             hash = (hash + asciiValue * 23) % dataMap.length;
         }
         return hash;
+    }
+
+    public void set(String key, int value) {
+        int index = hash(key);
+        Node newNode = new Node(key, value);
+        if (dataMap[index] == null) {
+            dataMap[index] = newNode;
+        } else {
+            Node temp = dataMap[index];
+            while (temp.next != null) {
+                temp = temp.next;
+            }
+            temp.next = newNode;
+        }
     }
 }
