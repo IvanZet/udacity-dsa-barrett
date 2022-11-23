@@ -2,6 +2,9 @@ package net.ivanzykov.algorithms.sorts.bubblesort;
 
 import java.util.Arrays;
 
+/**
+ * Compares adjacent values and swaps if needed
+ */
 public class BubbleSort {
 
     public static void bubbleSort(int[] array) {

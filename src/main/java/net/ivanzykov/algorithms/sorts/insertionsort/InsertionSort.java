@@ -2,6 +2,9 @@ package net.ivanzykov.algorithms.sorts.insertionsort;
 
 import java.util.Arrays;
 
+/**
+ * Compares value with all previous values. If smaller, swaps.
+ */
 public class InsertionSort {
 
     public static void insertionSort(int[] array) {

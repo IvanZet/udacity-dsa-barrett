@@ -2,6 +2,9 @@ package net.ivanzykov.algorithms.sorts.selectionsort;
 
 import java.util.Arrays;
 
+/**
+ * Finds value with minimal value in front and swaps.
+ */
 public class SelectionSort {
 
     public static void selectionSort(int[] array) {
