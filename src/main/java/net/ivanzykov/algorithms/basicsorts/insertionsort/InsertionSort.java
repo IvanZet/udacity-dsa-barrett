@@ -1,4 +1,4 @@
-package net.ivanzykov.algorithms.sorts.insertionsort;
+package net.ivanzykov.algorithms.basicsorts.insertionsort;
 
 import java.util.Arrays;
 

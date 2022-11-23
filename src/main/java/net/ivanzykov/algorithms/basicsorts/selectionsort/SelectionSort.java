@@ -1,4 +1,4 @@
-package net.ivanzykov.algorithms.sorts.selectionsort;
+package net.ivanzykov.algorithms.basicsorts.selectionsort;
 
 import java.util.Arrays;
 

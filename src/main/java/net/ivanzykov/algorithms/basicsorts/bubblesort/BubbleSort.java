@@ -1,4 +1,4 @@
-package net.ivanzykov.algorithms.sorts.bubblesort;
+package net.ivanzykov.algorithms.basicsorts.bubblesort;
 
 import java.util.Arrays;
 
