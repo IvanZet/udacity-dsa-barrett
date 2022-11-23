@@ -32,17 +32,32 @@ public class MergeSort {
         return combined;
     }
 
+    public static int[] mergeSort(int[] array) {
+        if (array.length == 1) return array;
+
+        int midIndex = array.length / 2;
+        int[] left = mergeSort(Arrays.copyOfRange(array, 0, midIndex));
+        int[] right = mergeSort(Arrays.copyOfRange(array, midIndex, array.length));
+
+        return merge(left, right);
+    }
+
     public static void main(String[] args) {
 
-        int[] array1 = {1,3,7,8};
-        int[] array2 = {2,4,5,6};
+        int[] originalArray = {3,1,4,2};
 
-        System.out.println( Arrays.toString( merge(array1, array2) ) );
+        int [] sortedArray = mergeSort(originalArray);
+
+        System.out.println( "\nOriginal Array: " + Arrays.toString( originalArray ) );
+
+        System.out.println( "\nSorted Array: " + Arrays.toString( sortedArray ) );
 
         /*
             EXPECTED OUTPUT:
             ----------------
-            [1, 2, 3, 4, 5, 6, 7, 8]
+            Original Array: [3, 1, 4, 2]
+
+            Sorted Array: [1, 2, 3, 4]
 
          */
 
