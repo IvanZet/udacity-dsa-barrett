@@ -1,5 +1,10 @@
 package net.ivanzykov.datastructures.binarysearchtree;
 
+import java.util.ArrayDeque;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Queue;
+
 public class BinarySearchTree {
 
     private Node root;
@@ -51,5 +56,31 @@ public class BinarySearchTree {
             }
         }
         return false;
+    }
+
+    /**
+     * Breadth First Search. Uses ArrayDeque instead of LinkedList because Java
+     * documentation favours the first one. Uses ArrayDeque.offer() and ArrayDeque.poll()
+     * instead of add() and remove() because the first two are defined in Queue interface.
+     *
+     * @return  list of integers representing the values of nodes in the tree
+     */
+    public List<Integer> BFS() {
+        BinarySearchTree.Node currentNode = root;
+        Queue<Node> queue = new ArrayDeque<>();
+        List<Integer> results = new ArrayList<>();
+        queue.offer(currentNode);
+
+        while (queue.size() > 0) {
+            currentNode = queue.poll();
+            results.add(currentNode.value);
+            if (currentNode.left != null) {
+                queue.offer(currentNode.left);
+            }
+            if (currentNode.right != null) {
+                queue.offer(currentNode.right);
+            }
+        }
+        return results;
     }
 }
