@@ -14,16 +14,14 @@ public class Main {
         myBST.insert(52);
         myBST.insert(82);
 
-        System.out.println("\nDFS PreOrder:");
-        System.out.println( myBST.DFSPreOrder() );
-        System.out.println( myBST.DFSPreOrderNoRecursion() );
-        System.out.println( myBST.DFSPreOrderRecursionWithMethod() );
+        System.out.println("\nDFS PostOrder:");
+        System.out.println( myBST.DFSPostOrder() );
 
         /*
             EXPECTED OUTPUT:
             ----------------
-            DFS PreOrder:
-            [47, 21, 18, 27, 76, 52, 82]
+            DFS PostOrder:
+            [18, 27, 21, 52, 82, 76, 47]
 
         */
 

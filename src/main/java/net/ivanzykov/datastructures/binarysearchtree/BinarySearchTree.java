@@ -145,4 +145,26 @@ public class BinarySearchTree {
             traverse(currentNode.right, results);
         }
     }
+
+    /**
+     * Depth First Search Post Order.
+     */
+    public List<Integer> DFSPostOrder() {
+        List<Integer> results = new ArrayList<>();
+
+        class Traverse {
+            Traverse(Node currentNode) {
+                if (currentNode.left != null) {
+                    new Traverse(currentNode.left);
+                }
+                if (currentNode.right != null) {
+                    new Traverse(currentNode.right);
+                }
+                results.add(currentNode.value);
+            }
+        }
+
+        new Traverse(root);
+        return results;
+    }
 }
