@@ -167,4 +167,26 @@ public class BinarySearchTree {
         new Traverse(root);
         return results;
     }
+
+    /**
+     * Depth First Search In Order.
+     */
+    public List<Integer> DFSInOrder() {
+        List<Integer> results = new ArrayList<>();
+
+        class Traverse {
+            Traverse(Node currentNode) {
+                if (currentNode.left != null) {
+                    new Traverse(currentNode.left);
+                }
+                results.add(currentNode.value);
+                if (currentNode.right != null) {
+                    new Traverse(currentNode.right);
+                }
+            }
+        }
+
+        new Traverse(root);
+        return results;
+    }
 }
