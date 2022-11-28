@@ -17,6 +17,7 @@ public class Main {
         System.out.println("\nDFS PreOrder:");
         System.out.println( myBST.DFSPreOrder() );
         System.out.println( myBST.DFSPreOrderNoRecursion() );
+        System.out.println( myBST.DFSPreOrderRecursionWithMethod() );
 
         /*
             EXPECTED OUTPUT:

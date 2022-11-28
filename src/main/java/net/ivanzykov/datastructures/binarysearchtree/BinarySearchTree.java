@@ -126,4 +126,23 @@ public class BinarySearchTree {
         new Traverse(root);
         return results;
     }
+
+    /**
+     * Depth First Search Pre Order with recursion via private method.
+     */
+    public List<Integer> DFSPreOrderRecursionWithMethod() {
+        List<Integer> results = new ArrayList<>();
+        traverse(root, results);
+        return results;
+    }
+
+    private void traverse(Node currentNode, List<Integer> results) {
+        results.add(currentNode.value);
+        if (currentNode.left != null) {
+            traverse(currentNode.left, results);
+        }
+        if (currentNode.right != null) {
+            traverse(currentNode.right, results);
+        }
+    }
 }
