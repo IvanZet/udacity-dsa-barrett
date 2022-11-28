@@ -1,9 +1,6 @@
 package net.ivanzykov.datastructures.binarysearchtree;
 
-import java.util.ArrayDeque;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Queue;
+import java.util.*;
 
 public class BinarySearchTree {
 
@@ -66,7 +63,7 @@ public class BinarySearchTree {
      * @return  list of integers representing the values of nodes in the tree
      */
     public List<Integer> BFS() {
-        BinarySearchTree.Node currentNode = root;
+        Node currentNode = root;
         Queue<Node> queue = new ArrayDeque<>();
         List<Integer> results = new ArrayList<>();
         queue.offer(currentNode);
@@ -81,6 +78,52 @@ public class BinarySearchTree {
                 queue.offer(currentNode.right);
             }
         }
+        return results;
+    }
+
+    /**
+     * Depth First Search Pre Order without recursion.
+     */
+    public List<Integer> DFSPreOrderNoRecursion() {
+        List<Integer> results = new ArrayList<>();
+        Node currentNode = root;
+        Deque<Node> stack = new ArrayDeque<>();
+        stack.push(currentNode);
+        while (stack.size() > 0) {
+            currentNode = stack.peek();
+            if (! results.contains(currentNode.value)) {
+                results.add(currentNode.value);
+            }
+            if (currentNode.left != null && ! results.contains(currentNode.left.value)) {
+                stack.push(currentNode.left);
+            } else if (currentNode.right != null && ! results.contains(currentNode.right.value)) {
+                stack.push(currentNode.right);
+            } else {
+                stack.pop();
+            }
+        }
+        return results;
+    }
+
+    /**
+     * Depth First Search Pre Order with recursion.
+     */
+    public List<Integer> DFSPreOrder() {
+        List<Integer> results = new ArrayList<>();
+
+        class Traverse {
+            Traverse(Node currentNode) {
+                results.add(currentNode.value);
+                if (currentNode.left != null) {
+                    new Traverse(currentNode.left);
+                }
+                if (currentNode.right != null) {
+                    new Traverse(currentNode.right);
+                }
+            }
+        }
+
+        new Traverse(root);
         return results;
     }
 }

@@ -14,14 +14,15 @@ public class Main {
         myBST.insert(52);
         myBST.insert(82);
 
-        System.out.println("\nBreadth First Search:");
-        System.out.println( myBST.BFS() );
+        System.out.println("\nDFS PreOrder:");
+        System.out.println( myBST.DFSPreOrder() );
+        System.out.println( myBST.DFSPreOrderNoRecursion() );
 
         /*
             EXPECTED OUTPUT:
             ----------------
-            Breadth First Search:
-            [47, 21, 76, 18, 27, 52, 82]
+            DFS PreOrder:
+            [47, 21, 18, 27, 76, 52, 82]
 
         */
 
